@@ -316,9 +316,8 @@ H5P.ImageMultipleHotspotQuestion = (function ($, Question) {
       this.score = this.score + 1;
       this.correctHotspotFeedback.push(this.hotspotFeedback);
       if (hotspot && hotspot.userSettings.feedbackText) {
-        if (this.params.imageMultipleHotspotQuestion.hotspotSettings.hotspotName) {
-          feedbackText = (this.params.imageMultipleHotspotQuestion.hotspotSettings.hotspotName ? hotspot.userSettings.feedbackText+' '+this.score+' of '+this.maxScore+' '+this.params.imageMultipleHotspotQuestion.hotspotSettings.hotspotName+'.' : hotspot.userSettings.feedbackText+' '+this.score+' of '+this.maxScore+'.');
-        }
+        var ofWord = this.params.imageMultipleHotspotQuestion.hotspotSettings.ofWord || 'of'; // Fetch the localized word from hotspotSettings or default to 'of'
+        feedbackText = (this.params.imageMultipleHotspotQuestion.hotspotSettings.hotspotName ? hotspot.userSettings.feedbackText+' '+this.score+' ' + ofWord + ' '+this.maxScore+' '+this.params.imageMultipleHotspotQuestion.hotspotSettings.hotspotName+'.' : hotspot.userSettings.feedbackText+' '+this.score+' ' + ofWord + ' '+this.maxScore+'.');
       }
       this.hotspotFeedback.incorrect = false;
     } 
