@@ -316,7 +316,7 @@ H5P.ImageMultipleHotspotQuestion = (function ($, Question) {
       this.score = this.score + 1;
       this.correctHotspotFeedback.push(this.hotspotFeedback);
       if (hotspot && hotspot.userSettings.feedbackText) {
-        var ofWord = this.params.imageMultipleHotspotQuestion.hotspotSettings.ofWord || 'of'; // Fetch the localized word from hotspotSettings or default to 'of'
+        var ofWord = hotspot.userSettings.ofWord || 'of'; // Fetch the localized word from userSettings or default to 'of'
         feedbackText = (this.params.imageMultipleHotspotQuestion.hotspotSettings.hotspotName ? hotspot.userSettings.feedbackText+' '+this.score+' ' + ofWord + ' '+this.maxScore+' '+this.params.imageMultipleHotspotQuestion.hotspotSettings.hotspotName+'.' : hotspot.userSettings.feedbackText+' '+this.score+' ' + ofWord + ' '+this.maxScore+'.');
       }
       this.hotspotFeedback.incorrect = false;
