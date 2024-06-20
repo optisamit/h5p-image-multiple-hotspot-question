@@ -92,6 +92,15 @@
                       "importance": "low",
                       "placeholder": "Correct, you have found",
                       "optional": true
+                    },
+                    {
+                      "name": "ofWord",
+                      "type": "text",
+                      "label": "Word for 'of' in feedback",
+                      "importance": "low",
+                      "placeholder": "of",
+                      "description": "This word is used in the feedback to indicate the number of correct hotspots out of the total. For example, '3 of 5'.",
+                      "optional": true
                     }
                   ]
                 },
